@@ -1,28 +1,42 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
-# Add the Cat class & list and view function below the imports
-class Car:  # Note that parens are optional if not inheriting from another class
-  def __init__(self, make, model, oiltype, year):
-    self.make = make
-    self.model = model
-    self.oiltype = oiltype
-    self.year = year
-
-cars = [
-  Car('Lolo', 'tabby', 'Kinda rude.', 3),
-  Car('Sachi', 'tortoiseshell', 'Looks like a turtle.', 0),
-  Car('Fancy', 'bombay', 'Happy fluff ball.', 4),
-  Car('Bonk', 'selkirk rex', 'Meows loudly.', 6)
-]
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import Car
+from .forms import  ServiceForm
 
 # Create your views here.
 def home(request):
-  return HttpResponse('<h1>Found My Dream Car</h1>')
+  return render(request, 'home.html')
 
 def about(request):
   return render(request, 'about.html')
 
 def cars_index(request):
-  return render(request, 'cars/index.html', { 'cars': cars})
+  cars = Car.objects.all()
+  return render(request, 'cars/index.html', { 'cars': cars })
 
+def cars_detail(request, car_id):
+  car = Car.objects.get(id=car_id)
+  feeding_form = ServiceForm()
+  return render(request, 'cars/detail.html', {
+    'car': car, 'feeding_form': feeding_form
+  })
+
+class CarCreate(CreateView):
+  model = Car
+  fields = '__all__'
+
+class CarUpdate(UpdateView):
+  model = Car
+  fields = ['model', 'oiltype', 'year']
+
+class CarDelete(DeleteView):
+  model = Car
+  success_url = '/cars/'
+
+def add_service(request, car_id):
+  form = ServiceForm(request.POST)
+  if form.is_valid():
+    new_feeding = form.save(commit=False)
+    new_feeding.car_id = car_id
+    new_feeding.save()
+  return redirect('cars_detail', car_id=car_id)
