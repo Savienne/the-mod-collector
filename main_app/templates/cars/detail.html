@@ -3,10 +3,20 @@
 
 {% block head %}
 <link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
+<link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
+<script 
+  src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
+>
+</script>
+<link 
   rel="stylesheet" 
   type="text/css" 
   href="{% static 'css/cars/car-detail.css' %}"
 />
+<script defer src="{% static 'js/car-detail.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +28,7 @@
       alt="A skater boy cat"
     >
   </div>
-  <div class="cat-details">
+  <div class="car-details">
     <h1>{{ car.make }}</h1>
     {% if car.year > 0 %}
       <h2>A {{ car.year }} year old {{ car.model }}</h2>
@@ -26,7 +36,68 @@
       <h2>A {{ car.model }} kitten.</h2>
     {% endif %}
     <p>{{ car.oiltype}}</p>
+    <div class="cat-actions">
+      <a href="{% url 'cars_update' car.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'cars_delete' car.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
+
+<div class="feedings-toy-container">
+  <section class="feedings">
+    <div class="subsection-title">
+      <h2>Maintence Logs</h2>
+      <img 
+        src="{% static 'images/cat-cone.svg' %}" 
+        alt="An ice cream cone cat"
+      />
+      <img 
+        src="{% static 'images/cat-onigiri.svg' %}"
+        alt="A cat as onigiri"
+      />
+      <img 
+        src="{% static 'images/kitty-kabob.svg' %}" 
+        alt="A kabob of kittens"
+      />
+    </div>
+    <h3>Add a Service</h3>
+    <form
+      action="{% url 'add_services' car.id %}"
+      method="post"
+      class="subsection-content"
+    >
+      {% if car.service_for_today %}
+        <p class="fed">
+          {{ car.make }} has been fed all their meals for today!
+        </p>
+      {% else %}
+        <p class="unfed">{{ car.make }} might need maintenance!</p>
+      {% endif %}
+      {% csrf_token %}
+      {{ service_form.as_p }}
+      <button type="submit" class="btn submit">Add Service</button>
+    </form>
+    <h3>Past Maintenances</h3>
+    {% if car.service_set.all.count %}
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Meal</th></tr>
+        </thead>
+        <tbody>
+          {% for services in car.service_set.all %}
+            <tr>
+              <td>{{ service.date }}</td>
+              <td>{{ service.get_maintenance_display }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>{{car.make}} has never been serviced 😔</p>
+      </div>
+    {% endif %}
+  </section>
+</div>
 
 {% endblock %}
