@@ -14,7 +14,7 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/cats/cat-detail.css' %}"
+  href="{% static 'css/cars/car-detail.css' %}"
 />
 <script defer src="{% static 'js/car-detail.js' %}"></script>
 {% endblock %}
@@ -76,7 +76,7 @@
       {% endif %}
       {% csrf_token %}
       {{ services_form.as_p }}
-      <button type="submit" class="btn submit">Add Feeding</button>
+      <button type="submit" class="btn submit">Add Service</button>
     </form>
     <h3>Past Feedings</h3>
     {% if car.services_set.all.count %}
