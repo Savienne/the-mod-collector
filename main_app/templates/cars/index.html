@@ -20,7 +20,7 @@
 </section>
 
 <section class="card-container">
-  {% for cars in car %}
+  {% for car in cars %}
     <div class="card">
       <a href="{% url 'cars_detail' car.id %}">
         <div class="card-content">

@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Car, Services, Mod
+from .models import Car, Services
 
 # Register your models here.
 admin.site.register(Car)
 admin.site.register(Services)
-admin.site.register(Mod)

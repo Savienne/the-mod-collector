@@ -14,7 +14,7 @@
 <link 
   rel="stylesheet" 
   type="text/css" 
-  href="{% static 'css/cars/car-detail.css' %}"
+  href="{% static 'css/cats/cat-detail.css' %}"
 />
 <script defer src="{% static 'js/car-detail.js' %}"></script>
 {% endblock %}
@@ -28,14 +28,15 @@
       alt="A skater boy cat"
     >
   </div>
-  <div class="car-details">
+  <div class="cat-details">
     <h1>{{ car.make }}</h1>
     {% if car.year > 0 %}
-      <h2>A {{ car.year }} year old {{ car.model }}</h2>
+      <h2>A {{ car.year }} year old {{ car.year }}</h2>
     {% else %}
       <h2>A {{ car.model }} kitten.</h2>
     {% endif %}
-    <p>{{ car.oiltype}}</p>
+    <p>{{ car.oiltype }}</p>
+
     <div class="cat-actions">
       <a href="{% url 'cars_update' car.id %}" class="btn warn">Edit</a>
       <a href="{% url 'cars_delete' car.id %}" class="btn danger">Delete</a>
@@ -46,7 +47,7 @@
 <div class="feedings-toy-container">
   <section class="feedings">
     <div class="subsection-title">
-      <h2>Maintence Logs</h2>
+      <h2>Services</h2>
       <img 
         src="{% static 'images/cat-cone.svg' %}" 
         alt="An ice cream cone cat"
@@ -66,38 +67,87 @@
       method="post"
       class="subsection-content"
     >
-      {% if car.service_for_today %}
+      {% if cars.serv_for_today %}
         <p class="fed">
           {{ car.make }} has been fed all their meals for today!
         </p>
       {% else %}
-        <p class="unfed">{{ car.make }} might need maintenance!</p>
+        <p class="unfed">{{ car.make }} might be hungry!</p>
       {% endif %}
       {% csrf_token %}
-      {{ service_form.as_p }}
-      <button type="submit" class="btn submit">Add Service</button>
+      {{ services_form.as_p }}
+      <button type="submit" class="btn submit">Add Feeding</button>
     </form>
-    <h3>Past Maintenances</h3>
-    {% if car.service_set.all.count %}
+    <h3>Past Feedings</h3>
+    {% if car.services_set.all.count %}
       <table>
         <thead>
           <tr><th>Date</th><th>Meal</th></tr>
         </thead>
         <tbody>
-          {% for services in car.service_set.all %}
+          {% for services in car.services_set.all %}
             <tr>
-              <td>{{ service.date }}</td>
-              <td>{{ service.get_maintenance_display }}</td>
+              <td>{{ services.date }}</td>
+              <td>{{ services.get_maintenance_display }}</td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
     {% else %}
       <div class="subsection-content">
-        <p>{{car.make}} has never been serviced 😔</p>
+        <p>{{car.make}} has never been fed 😔</p>
       </div>
     {% endif %}
   </section>
+  <section class="toys">
+    <div class="subsection-title">
+      <h2>Toys</h2>
+      <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
+      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
+      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
+    </div>
+    <h3>{{ cat.name }}'s Toys</h3>
+    <div class="subsection-content">
+      {% if cat.toys.count %}
+        {% for toy in cat.toys.all %}
+          <div class="toy-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ toy.color }}"
+            ></div>
+            <a href="{% url 'toys_detail' toy.id %}">
+              <p>A {{ toy.color }} {{ toy.name }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-toys">{{ cat.name }} doesn't have any toys 😞</p>
+      {% endif %}
+    </div>
+    <h3>Available Toys</h3>
+    <div class="subsection-content">
+      {% if toys.count %}
+        {% for toy in toys.all%}
+          <div class="toy-container">
+            <div 
+              class="color-block"
+              style="background-color: {{ toy.color }}"
+            ></div>
+            <a href="{% url 'toys_detail' toy.id %}">
+              <p>A {{ toy.color }} {{ toy.name }}</p>
+            </a>
+            <form action="{% url 'assoc_toy' cat.id toy.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Give toy</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="all-toys">
+          {{cat.name}} already has all the available toys 🥳
+        </p>
+      {% endif %}
+    </div>
 </div>
 
 {% endblock %}

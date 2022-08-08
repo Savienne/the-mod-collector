@@ -19,7 +19,7 @@ def cars_detail(request, car_id):
   car = Car.objects.get(id=car_id)
   services_form = ServicesForm()
   return render(request, 'cars/detail.html', {
-    'car': car, 'service_form': services_form
+    'car': car, 'services_form': services_form
   })
 
 class CarCreate(CreateView):
@@ -28,7 +28,7 @@ class CarCreate(CreateView):
 
 class CarUpdate(UpdateView):
   model = Car
-  fields = ['model', 'oiltype', 'year']
+  fields = ['make', 'model', 'oiltype', 'year']
 
 class CarDelete(DeleteView):
   model = Car
