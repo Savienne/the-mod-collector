@@ -69,20 +69,20 @@
     >
       {% if cars.serv_for_today %}
         <p class="fed">
-          {{ car.make }} has been fed all their meals for today!
+          {{ car.make }} is up to date with maintenance!
         </p>
       {% else %}
-        <p class="unfed">{{ car.make }} might be hungry!</p>
+        <p class="unfed">{{ car.make }} might need maintenance!</p>
       {% endif %}
       {% csrf_token %}
       {{ services_form.as_p }}
       <button type="submit" class="btn submit">Add Service</button>
     </form>
-    <h3>Past Feedings</h3>
+    <h3>Past Services</h3>
     {% if car.services_set.all.count %}
       <table>
         <thead>
-          <tr><th>Date</th><th>Meal</th></tr>
+          <tr><th>Date</th><th>Service</th></tr>
         </thead>
         <tbody>
           {% for services in car.services_set.all %}
@@ -95,18 +95,18 @@
       </table>
     {% else %}
       <div class="subsection-content">
-        <p>{{car.make}} has never been fed 😔</p>
+        <p>{{car.make}} has never been serviced 😔</p>
       </div>
     {% endif %}
   </section>
   <section class="toys">
     <div class="subsection-title">
-      <h2>Toys</h2>
+      <h2>Mods</h2>
       <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
       <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
       <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
     </div>
-    <h3>{{ cat.name }}'s Toys</h3>
+    <h3>{{ cat.name }}'s MODS</h3>
     <div class="subsection-content">
       {% if cat.toys.count %}
         {% for toy in cat.toys.all %}
@@ -121,10 +121,10 @@
           </div>
         {% endfor %}
       {% else %}
-        <p class="no-toys">{{ cat.name }} doesn't have any toys 😞</p>
+        <p class="no-toys">{{ cat.name }} doesn't have any mods 😞</p>
       {% endif %}
     </div>
-    <h3>Available Toys</h3>
+    <h3>Available Mods</h3>
     <div class="subsection-content">
       {% if toys.count %}
         {% for toy in toys.all%}
@@ -138,13 +138,13 @@
             </a>
             <form action="{% url 'assoc_toy' cat.id toy.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn submit">Give toy</button>
+              <button type="submit" class="btn submit">Apply Mod</button>
             </form>
           </div>
         {% endfor %}
       {% else %}
         <p class="all-toys">
-          {{cat.name}} already has all the available toys 🥳
+          {{cat.name}} already has all the available mods 🥳
         </p>
       {% endif %}
     </div>
