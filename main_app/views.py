@@ -17,9 +17,10 @@ def cars_index(request):
 
 def cars_detail(request, car_id):
   car = Car.objects.get(id=car_id)
+  mods_car_doesnt_have = Car.objects.exclude(id__in = car.mods.all().values_list('id'))
   services_form = ServicesForm()
   return render(request, 'cars/detail.html', {
-    'car': car, 'services_form': services_form
+    'car': car, 'services_form': services_form, 'mods': mods_car_doesnt_have
   })
 
 class CarCreate(CreateView):
