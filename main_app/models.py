@@ -18,7 +18,7 @@ class Mod(models.Model):
     return self.name
 
   def get_absolute_url(self):
-    return reverse("mod_detail", kwargs={"pk": self.id})
+    return reverse("mods_detail", kwargs={"pk": self.id})
 
 class Car(models.Model): 
   make = models.CharField(max_length=100)
@@ -27,14 +27,14 @@ class Car(models.Model):
   year = models.IntegerField()
   mods = models.ManyToManyField(Mod)
 
-def __str__(self):
-    return self.name
+  def __str__(self):
+      return self.name
 
-def get_absolute_url(self):
-    return reverse('cars_detail', kwargs={'car_id': self.id})
+  def get_absolute_url(self):
+      return reverse('cars_detail', kwargs={'car_id': self.id})
 
-def serv_for_today(self):
-    return self.servicing_set.filter(date=date.today()).count() >= len(MAINTENANCE)
+  def serv_for_today(self):
+      return self.servicing_set.filter(date=date.today()).count() >= len(MAINTENANCE)
 
 class Services(models.Model):
   date = models.DateField('Service date')
