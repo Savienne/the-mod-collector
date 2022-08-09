@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Car
+from .models import Car, Mod
 from .forms import  ServicesForm
 
 # Create your views here.
@@ -41,3 +41,21 @@ def add_services(request, car_id):
     new_services.car_id = car_id
     new_services.save()
   return redirect('cars_detail', car_id=car_id)
+
+class ModCreate(CreateView):
+  model = Mod
+  fields = '__all__'
+
+class ModList(ListView):
+  model = Mod
+
+class ModDetail(DetailView):
+  model = Mod
+
+class ModUpdate(UpdateView):
+  model = Mod
+  fields = ['name', 'color']
+
+class ModDelete(DeleteView):
+  model = Mod
+  success_url = '/mods/'
