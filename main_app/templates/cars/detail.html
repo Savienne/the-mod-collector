@@ -106,37 +106,37 @@
       <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
       <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" />
     </div>
-    <h3>{{ cat.name }}'s MODS</h3>
+    <h3>{{ car.make }}'s MODS</h3>
     <div class="subsection-content">
-      {% if cat.toys.count %}
-        {% for toy in cat.toys.all %}
+      {% if cars.mod.count %}
+        {% for mod in car.mods.all %}
           <div class="toy-container">
             <div 
               class="color-block"
               style="background-color: {{ toy.color }}"
             ></div>
-            <a href="{% url 'toys_detail' toy.id %}">
-              <p>A {{ toy.color }} {{ toy.name }}</p>
+            <a href="{% url 'mods_detail' mod.id %}">
+              <p>A {{ mod.color }} {{ mod.name }}</p>
             </a>
           </div>
         {% endfor %}
       {% else %}
-        <p class="no-toys">{{ cat.name }} doesn't have any mods 😞</p>
+        <p class="no-toys">{{ car.name }} doesn't have any mods 😞</p>
       {% endif %}
     </div>
     <h3>Available Mods</h3>
     <div class="subsection-content">
-      {% if toys.count %}
-        {% for toy in toys.all%}
+      {% if mods.count %}
+        {% for mod in mods.all%}
           <div class="toy-container">
             <div 
               class="color-block"
-              style="background-color: {{ toy.color }}"
+              style="background-color: {{ mod.color }}"
             ></div>
-            <a href="{% url 'toys_detail' toy.id %}">
-              <p>A {{ toy.color }} {{ toy.name }}</p>
+            <a href="{% url 'mods_detail' mod.id %}">
+              <p>A {{ mod.color }} {{ mod.name }}</p>
             </a>
-            <form action="{% url 'assoc_toy' cat.id toy.id %}" method="post">
+            <form action="{% url 'assoc_mod' car.id mod.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn submit">Apply Mod</button>
             </form>
@@ -144,7 +144,7 @@
         {% endfor %}
       {% else %}
         <p class="all-toys">
-          {{cat.name}} already has all the available mods 🥳
+          {{car.make}} already has all the available mods 🥳
         </p>
       {% endif %}
     </div>

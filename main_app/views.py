@@ -59,3 +59,7 @@ class ModUpdate(UpdateView):
 class ModDelete(DeleteView):
   model = Mod
   success_url = '/mods/'
+
+def assoc_mod(request, car_id, mod_id):
+  Car.objects.get(id=car_id).cars.add(mod_id)
+  return redirect('cars_detail', car_id=car_id)

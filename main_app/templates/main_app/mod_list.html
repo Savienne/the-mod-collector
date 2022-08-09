@@ -23,7 +23,7 @@
   {% for mod in mod_list %}
   <div class="card" style="border-color: {{ toy.color }}">
     <div class="card-bg" style="background-color: {{ toy.color }}"></div>
-    <a href="{% url 'toys_detail' toy.id %}">
+    <a href="{% url 'mods_detail' mod.id %}">
       <div class="card-content">
         <h2>{{ mod.name }}</h2>
         <p>A {{ mod.color }} toy</p>
