@@ -12,7 +12,7 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>All Cat Toys</h1>
+  <h1>All Mods</h1>
   <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
   <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
   <img src="{% static 'images/post.svg' %}" alt="A scratching post" />
@@ -21,8 +21,8 @@
 
 <section class="card-container">
   {% for mod in mod_list %}
-  <div class="card" style="border-color: {{ toy.color }}">
-    <div class="card-bg" style="background-color: {{ toy.color }}"></div>
+  <div class="card" style="border-color: {{ mod.color }}">
+    <div class="card-bg" style="background-color: {{ mod.color }}"></div>
     <a href="{% url 'mods_detail' mod.id %}">
       <div class="card-content">
         <h2>{{ mod.name }}</h2>
