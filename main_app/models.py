@@ -18,7 +18,7 @@ class Mod(models.Model):
     return self.name
 
   def get_absolute_url(self):
-    return reverse("mods_detail", kwargs={"pk": self.id})
+    return reverse("mod_detail", kwargs={"pk": self.id})
 
 class Car(models.Model): 
   make = models.CharField(max_length=100)

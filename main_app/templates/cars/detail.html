@@ -121,7 +121,7 @@
           </div>
         {% endfor %}
       {% else %}
-        <p class="no-toys">{{ car.name }} doesn't have any mods 😞</p>
+        <p class="no-toys">{{ car.make }} doesn't have any mods 😞</p>
       {% endif %}
     </div>
     <h3>Available Mods</h3>
@@ -134,7 +134,7 @@
               style="background-color: {{ mod.color }}"
             ></div>
             <a href="{% url 'mods_detail' mod.id %}">
-              <p>A {{ mod.color }} {{ mod.name }}</p>
+              <p>A {{ mod.color }} {{ mod.make }}</p>
             </a>
             <form action="{% url 'assoc_mod' car.id mod.id %}" method="post">
               {% csrf_token %}

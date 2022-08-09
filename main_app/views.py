@@ -17,7 +17,7 @@ def cars_index(request):
 
 def cars_detail(request, car_id):
   car = Car.objects.get(id=car_id)
-  mods_car_doesnt_have = Car.objects.exclude(id__in = car.mods.all().values_list('id'))
+  mods_car_doesnt_have = Mod.objects.exclude(id__in = car.mods.all().values_list('id'))
   services_form = ServicesForm()
   return render(request, 'cars/detail.html', {
     'car': car, 'services_form': services_form, 'mods': mods_car_doesnt_have
@@ -62,5 +62,5 @@ class ModDelete(DeleteView):
   success_url = '/mods/'
 
 def assoc_mod(request, car_id, mod_id):
-  Car.objects.get(id=car_id).cars.add(mod_id)
+  Car.objects.get(id=car_id).mods.add(mod_id)
   return redirect('cars_detail', car_id=car_id)
