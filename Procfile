@@ -1,1 +1,1 @@
-web: gunicorn modspace.wsgi
+web: gunicorn mymodcollector.wsgi 
