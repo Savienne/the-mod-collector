@@ -32,11 +32,15 @@ def cars_detail(request, car_id):
 
 class CarCreate(LoginRequiredMixin, CreateView):
   model = Car
-  fields = '__all__'
+  fields = ['make', 'model', 'oiltype', 'year']
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class CarUpdate(LoginRequiredMixin, UpdateView):
   model = Car
-  fields = ['make', 'model', 'oiltype', 'year']
+  fields = ['model', 'oiltype', 'year']
 
 class CarDelete(LoginRequiredMixin, DeleteView):
   model = Car
