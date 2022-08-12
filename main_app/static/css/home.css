@@ -1,3 +1,7 @@
+.Thead{
+font-size: 50px;
+color: rgb(10, 8, 8);
+}
 main {
     display: flex;
     align-items: center;

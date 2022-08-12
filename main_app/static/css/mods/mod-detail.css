@@ -1,3 +1,7 @@
+body{
+  background-image: url('/images/tan2.png');
+}
+
 main {
     display: flex;
     align-items: flex-end;
