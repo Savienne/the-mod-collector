@@ -41,11 +41,6 @@ Technologies Used:
   ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
   ![Django](https://img.shields.io/badge/Django-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-
-
-
-MongoDB Visual Studio Code JavaScript CSS3 HTML5 NodeJS Express.js GitHub Django
-
 API Used:  
 None
 
