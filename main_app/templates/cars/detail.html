@@ -29,13 +29,13 @@
     > {% endcomment %}
   </div>
   <div class="cat-details">
-    <h1>{{ car.make }}</h1>
+    {% comment %} <h1>{{ car.make }}</h1> {% endcomment %}
     {% if car.year > 0 %}
-      <h2> {{ car.year }}  {{ cars.model }}</h2>
+      <h2> {{ car.year }} {{ car.make }}  {{ car.model}}</h2>
     {% else %}
       <h2>A {{ car.model }}</h2>
     {% endif %}
-    <p>{{ car.oiltype }}</p>
+    <p> Oil Type: {{ car.oiltype }}</p>
 
     <div class="cat-actions">
       <a href="{% url 'cars_update' car.id %}" class="btn warn">Edit</a>
