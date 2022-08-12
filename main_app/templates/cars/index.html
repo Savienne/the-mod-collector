@@ -15,7 +15,7 @@
   <h1>MOD List</h1>
   <img src="{% static '/images/automobile-car-cultures-svgrepo-com.svg' %}" alt="A cool cat" />
   <img src="{% static '/images/automobile-steering-wheel-svgrepo-com.svg' %}" alt="A happy cat" />
-  <img src="{% static '/images/automobile-speedometer-svgrepo-com.svg' %}" alt="A cat in a teacup" />
+  <img src="{% static '/images/nerd-cat.svg' %}" alt="A cat in a teacup" />
   <img src="{% static '/images/automobile-motor-svgrepo-com.svg' %}" alt="A cat in a box" />
 </section>
 
@@ -25,10 +25,7 @@
       <a href="{% url 'cars_detail' car.id %}">
         <div class="card-content">
           <div class="card-img-container">
-            {% comment %} <img 
-              src="{% static '/images/automobile-speedometer-svgrepo-com.svg' %}" 
-              alt="A skater boy cat"
-            > {% endcomment %}
+     
           </div>
           <h2 class="card-title">{{ car.make }}</h2>
           {% if car.year > 0 %}
