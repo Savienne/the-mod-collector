@@ -56,10 +56,10 @@ Savienne Mitchell
 
 Special Thanks  
 
-Hunter Long (MVP!)
-Emily Lascano
-Jackson Reeves
-David Stinson
-Ben Manley
-Ian Terada
-Joe Malatesta
+Hunter Long  
+Emily Lascano  
+Jackson Reeves  
+David Stinson  
+Ben Manley  
+Ian Terada  
+Joe Malatesta  
