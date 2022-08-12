@@ -52,7 +52,6 @@ body {
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
   /* background-color: blueviolet; */
-  background-image: url('/static/images/trianglify-lowres (4).png');  
   background-repeat: no-repeat;
   background-size: cover;
 }
