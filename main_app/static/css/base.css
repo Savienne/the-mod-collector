@@ -1,7 +1,13 @@
+/* body{
+background-image: url('/static/images/trianglify-lowres (4).png');
+background-repeat: no-repeat;
+background-size: cover;
+} */
+
 html {
-  background-image: url('/static/images/Untitled.png');
-  box-sizing: border-box
-}
+   background-image: url('/static/images/trianglify-lowres (4).png');
+  box-sizing: border-box 
+}  
 
 /* The Universal Selector */
 *, /* All elements*/
@@ -46,7 +52,9 @@ body {
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
   /* background-color: blueviolet; */
-  background-image: url('/static/images/Untitled.png');  
+  background-image: url('/static/images/trianglify-lowres (4).png');  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {

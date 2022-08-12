@@ -1,3 +1,9 @@
+body{
+  background-image: url('/static/images/trianglify-lowres (4).png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .Thead{
 font-size: 50px;
 color: rgb(10, 8, 8);

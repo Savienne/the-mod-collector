@@ -31,6 +31,9 @@
         <li><a href="{% url 'mods_create' %}">Add a Mod</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'logout' %}">Log out</a></li>
+        <a href="/">
+          <p>Home</p>
+        </a>
         {% else %}
         <li><a href="{% url 'about'%}">About</a></li>
         <li><a href="{% url 'home'%}">Login</a></li>

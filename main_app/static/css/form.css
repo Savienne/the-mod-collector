@@ -1,5 +1,7 @@
 body{
-  background-image: url('/static/images/tan2.png');
+  background-image: url('/static/images/TAN.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .form-container {
     display: flex;
