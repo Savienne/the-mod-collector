@@ -48,10 +48,14 @@ Next Steps
 
 Adding API to reccomend garage shops  
 
-Mobile friendly(ish)
-Contributors
-Savienne Mitchell Click here view github
-Special Thanks
+Mobile friendly(ish)  
+
+Contributors  
+
+Savienne Mitchell  
+
+Special Thanks  
+
 Hunter Long (MVP!)
 Emily Lascano
 Jackson Reeves
