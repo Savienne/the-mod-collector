@@ -1,12 +1,10 @@
 # the-mod-collector
-𝔐𝔬𝔡𝔰𝔭𝔞𝔠𝔢
+𝔐𝔬𝔡𝔰𝔭𝔞𝔠𝔢  
 Click here to get to the Deployed Link  
 
 https://modspace.herokuapp.com/
 
-Getting Started
-CHEERS is where you can pair songs with drinks! There are four sections:
-
+Getting Started  
 Wanna do better at keeping track of your service appointments? Future 
 Ambitions to jazz up your car?  Your in the right place! here you can add your car, ass service dates, and add mod ideas, and sort them by priority. Have fun! Happy Hacking!
 Users are able to:
@@ -15,7 +13,8 @@ create, edit, and delete a vehicle
 add a mod
 add a service date  
 
-Planning
+Planning  
+
 Click here to get a closer look at Trello Planning Materials  
 
 https://trello.com/b/Tuf3OODI/unit-1-project  
