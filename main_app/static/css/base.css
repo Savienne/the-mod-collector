@@ -163,6 +163,13 @@ nav li {
 
 .page-content {
   font-size: var(--font-reg);
+  background-color: white;
+  width: 224px;
+  height: 224px;
+  margin: 10px;
+  border: solid 2px;
+  box-shadow: var(--card-box-shadow);
+  position: relative;
 }
 
 @media only screen and (min-width: 768px) {
