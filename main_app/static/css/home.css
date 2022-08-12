@@ -4,9 +4,17 @@ body{
 }
 
 .Thead{
-font-size: 50px;
-color: rgb(10, 8, 8);
+font-size: 50px; 
+color: rgba(233, 230, 230, 0.898);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 80%; 
+/* background-image: url('/static/images/logo.png'); */
+background-repeat: no-repeat;
 }
+
 main {
     display: flex;
     align-items: center;
@@ -42,6 +50,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 80%;
+    background-image: url('/static/images/tan2.png');
   }
   
   .login h1 {
