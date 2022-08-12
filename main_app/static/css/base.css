@@ -1,5 +1,5 @@
 html {
-  background-image: url('/images/Ultra Hd 4K Cars Wallpapers Desktop Backgrounds Hd.jpg')cover cover;
+  background-image: url('/static/images/Untitled.png');
   box-sizing: border-box
 }
 
@@ -46,8 +46,7 @@ body {
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
   /* background-color: blueviolet; */
-  background-image: url('/static/images/background1.jpg');
-  
+  background-image: url('/static/images/Untitled.png');  
 }
 
 header {
