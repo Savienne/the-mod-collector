@@ -7,25 +7,23 @@ https://modspace.herokuapp.com/
 Getting Started
 CHEERS is where you can pair songs with drinks! There are four sections:
 
-Add Tune (add your favorite tunes and pair it with your favorite drink)
-Boozy Tunes (random pairing are shown here and you can add it to your profile)
-Profiles (view other profiles and their favorite pairings)
-My Page (view your own page details and have the ability to edit, add, delete your boozy tunes)
+Wanna do better at keeping track of your service appointments? Future 
+Ambitions to jazz up your car?  Your in the right place! here you can add your car, ass service dates, and add mod ideas, and sort them by priority. Have fun! Happy Hacking!
 Users are able to:
 
-create, edit, and delete boozy tunes
-edit their profile
-add their favorite drink and song
-view other profiles and their boozy tunes
-Github
-Click here to get to the Back-End Github
+create, edit, and delete a vehicle
+add a mod
+add a service date  
 
 Planning
-Click here to get a closer look at our Trello Planning Materials
+Click here to get a closer look at Trello Planning Materials  
+
+https://trello.com/b/Tuf3OODI/unit-1-project  
 
 ERD & Wireframe
-Click here to get a closer look to the ERD and Wireframe
-ERD Wireframe
+Click here to get a closer look to the ERD and Wireframe  
+
+https://whimsical.com/savy-s-cafe-wireframe-4MhAMWTJP7BUchAghXb7A9  
 
 Website Preview
 Landing Page
@@ -40,7 +38,7 @@ None
 
 Next Steps
  
- Mobile friendly
+Mobile friendly(ish)
 Contributors
 Savienne Mitchell Click here view github
 Special Thanks
