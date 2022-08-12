@@ -10,10 +10,13 @@
   {% if object %}
     <h1>Edit {{object.name}}</h1>
   {% else %}
-    <h1>Add a MOD</h1>
+    <h1>Add a MOD（Select color for priority） <h1
   {% endif %}
   <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer"/>
 </div>
+<h1>Red: High<h1>
+  <h1>Yellow: Medium<h1>
+  <h1>Green: Low<h1>
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>

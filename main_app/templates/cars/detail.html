@@ -116,7 +116,7 @@
               style="background-color: {{ mod.color }}"
             ></div>
             <a href="{% url 'mods_detail' mod.id %}">
-              <p>A {{ mod.color }} {{ mod.name }}</p>
+              <p> {{ mod.name }}</p>
             </a>
           </div>
         {% endfor %}
@@ -124,7 +124,7 @@
         <p class="no-toys">{{ car.make }} doesn't have any mods 😞 </p>
       {% endif %}
     </div>
-    <h3>Available Mods</h3>
+    <h3>Available Mods </h3>
     <div class="subsection-content">
       {% if mods.count %}
         {% for mod in mods.all%}
@@ -134,7 +134,7 @@
               style="background-color: {{ mod.color }}"
             ></div>
             <a href="{% url 'mods_detail' mod.id %}">
-              <p>A {{ mod.color }} {{ mod.make }}</p>
+              <p> {{ mod.name }} {{ mod.make }}</p>
             </a>
             <form action="{% url 'assoc_mod' car.id mod.id %}" method="post">
               {% csrf_token %}
