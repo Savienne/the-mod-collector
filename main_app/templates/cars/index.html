@@ -23,13 +23,13 @@
           <div class="card-img-container">
      
           </div>
-          <h2 class="card-title">{{ car.make }}</h2>
+          <h2 class="card-title"> Make: {{ car.make }}</h2>
           {% if car.year > 0 %}
-            <p>A {{ car.year }}  {{ car.model }}</p>
+            <p> Model: {{ car.model }} Year: {{ car.year }}</p>
           {% else %}
-            <p>A {{ car.model }} kitten.</p>
+            <p>A {{ car.model }} </p>
           {% endif %}
-          <p><small>{{ car.oiltype }}</small></p>
+          <p><small> Type Of Oil: {{ car.oiltype }}</small></p>
         </div>
       </a>
     </div>
