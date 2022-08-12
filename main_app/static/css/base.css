@@ -163,7 +163,7 @@ nav li {
 
 .page-content {
   font-size: var(--font-reg);
-  background-color: white;
+  background-color: tan; 
   width: 224px;
   height: 224px;
   margin: 10px;
