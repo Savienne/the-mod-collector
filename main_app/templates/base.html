@@ -17,11 +17,11 @@
 </head>
 <body>
   <header>
-    <div class="header-logo-container">
-      <a href="/">
+    {% comment %} <div class="header-logo-container"> {% endcomment %}
+      {% comment %} <a href="/">
         <p>Home</p>
-      </a>
-    </div>
+      </a> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
     <nav>
       <ul>
         {% if user.is_authenticated %}
