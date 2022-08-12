@@ -29,10 +29,12 @@ Landing Page
 
  <image src= 'main_app/static/images/Screen Shot 2022-08-12 at 8.59.28 AM.png'/>
 
-Technologies Used:
+Technologies Used:  
+
 MongoDB Visual Studio Code JavaScript CSS3 HTML5 NodeJS Express.js GitHub Django
 
-API Used:
+API Used:  
+
 None
 
 Next Steps
